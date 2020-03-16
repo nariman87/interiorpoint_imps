@@ -12,5 +12,8 @@ See installation_guides.txt in this repository.
 # Usage and example calculations
 See usage_guides.txt in this repository.
 
-# Latest relevant publications
+# Latest publications used this package
 [1] S. N. Saadatmand, Finding the ground states of infinite-size infinite-range Hamiltonians: explicit constrained optimizations of tensor networks, arXiv:1910.10370.
+
+# References used to create this package
+None.
