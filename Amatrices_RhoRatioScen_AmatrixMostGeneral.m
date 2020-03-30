@@ -10,15 +10,24 @@ function [Am,A0,Ap] = Amatrices_RhoRatioScen_AmatrixMostGeneral(D,a_array)
 
   for ii = 1:D 
 
-    if ( ii == D)
+    if ( ii == 1)
+        
+      Am(ii+1,ii) = a_array(ii);
+      %A0(ii,ii) = sign(a_array(2*D-2+ii))*sqrt(1-Am(ii+1,ii)^2);
+      A0(ii,ii) = sqrt(1-Am(ii+1,ii)^2);
+         
+    elseif ( ii == D)
       
-      A0(ii,ii) = a_array(2*D-2+ii);
+      Ap(ii-1,ii) = a_array(D-1+ii-1);  
+      %A0(ii,ii) = sign(a_array(2*D-2+ii))*sqrt(1-Ap(ii-1,ii)^2);
+      A0(ii,ii) = sqrt(1-Ap(ii-1,ii)^2);
       
     else
    
       Am(ii+1,ii) = a_array(ii);
-      Ap(ii,ii+1) = a_array(D-1+ii);
-      A0(ii,ii) = a_array(2*D-2+ii);
+      Ap(ii-1,ii) = a_array(D-1+ii-1);
+      %A0(ii,ii) = sign(a_array(2*D-2+ii))*sqrt(1-Am(ii+1,ii)^2-Ap(ii-1,ii)^2);
+      A0(ii,ii) = sqrt(1-Am(ii+1,ii)^2-Ap(ii-1,ii)^2);
         
     end
 
